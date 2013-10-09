@@ -1,0 +1,12 @@
+[submodule "vendor/dojo/dojo"]
+	path = vendor/dojo/dojo
+	url = https://github.com/dojo/dojo.git
+[submodule "vendor/sirprize/dojomat"]
+	path = vendor/sirprize/dojomat
+	url = https://github.com/sirprize/dojomat.git
+[submodule "vendor/sirprize/mijit"]
+	path = vendor/sirprize/mijit
+	url = https://github.com/sirprize/mijit.git
+[submodule "vendor/sirprize/routed"]
+	path = vendor/sirprize/routed
+	url = https://github.com/sirprize/routed.git
