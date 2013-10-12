@@ -15,7 +15,7 @@ define([
         request: null,
         router: null,
         session: null,
-        templateString: '<div><h1>MyHomePage</h1><a href="#" data-dojorama-route="other" class="push">Go to MyOtherPage</a></div>',
+        templateString: '<div><h1>MyHomePage</h1><a href="#" data-dojomat-route="other" class="push">Go to MyOtherPage</a></div>',
 
         constructor: function (params) {
             this.request = params.request;
@@ -24,20 +24,27 @@ define([
         },
 
         postCreate: function () {
+            this.setTitle('MyHomePage');
+
+            // find "in-app" links
             query('a.push', this.domNode).forEach(lang.hitch(this, function (node) {
-                var url, route = this.router.getRoute(domAttr.get(node, 'data-dojorama-route')); // valid route name in data-dojo-props attribute of node?
+
+                // valid route name in data-dojomat-route attribute of node?
+                var url, route = this.router.getRoute(domAttr.get(node, 'data-dojomat-route'));
                 if (!route) { return; }
-                
+
+                // make links work as they should (eg for right-click and open in a new tab)
                 url = route.assemble();
                 node.href = url;
-                
+
+                // add click handler
                 this.own(on(node, 'click', lang.hitch(this, function (ev) {
                     ev.preventDefault();
                     this.push(url);
                 })));
             }));
-            
-            console.debug("MyHomePage.postCreate() is called"); // This will appear twice in the console
+
+            console.debug("MyHomePage.postCreate() is called");
             this.inherited(arguments);
         },
     });
