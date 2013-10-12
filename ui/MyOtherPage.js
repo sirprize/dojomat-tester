@@ -15,7 +15,7 @@ define([
         request: null,
         router: null,
         session: null,
-        templateString: '<div><h1>MyHomePage</h1><a href="#" data-dojorama-route="other" class="push">Go to MyOtherPage</a></div>',
+        templateString: '<div><h1>MyOtherPage</h1><a href="#" data-dojorama-route="home" class="push">Go to MyHomePage</a></div>',
 
         constructor: function (params) {
             this.request = params.request;
@@ -37,7 +37,7 @@ define([
                 })));
             }));
             
-            console.debug("MyHomePage.postCreate() is called"); // This will appear twice in the console
+            console.debug("MyOtherPage.postCreate() is called"); // This will appear twice in the console
             this.inherited(arguments);
         },
     });
