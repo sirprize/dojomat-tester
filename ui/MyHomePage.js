@@ -4,8 +4,8 @@ define([
     "dojo/query",
     "dojo/dom-attr",
     "dojo/_base/lang",
-    "mijit/_WidgetBase",
-    "mijit/_TemplatedMixin",
+    "dijit/_WidgetBase",
+    "dijit/_TemplatedMixin",
     "dojomat/_AppAware",
     "dojomat/_StateAware",
     "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"

@@ -5,27 +5,8 @@
     </head>
 
     <body>
-        <script>
-            var dojoConfig = {
-                async: 1,
-                cacheBust: 1,
-                'routing-map': {
-                    pathPrefix: '/dojomat-tester',
-                    layers: {}
-                },
-                packages: [
-                    { name: "dojomat", location: "../../sirprize/dojomat" },
-                    { name: "mijit", location: "../../sirprize/mijit" },
-                    { name: "routed", location: "../../sirprize/routed" },
-                    { name: 'tester', location: '../../..' }
-                ]
-            };
-        </script>
-        
-        <script src="/dojomat-tester/vendor/dojo/dojo/dojo.js"></script>
-        
-        <script>
-            require(['tester/App'], function (App) { new App(); });
-        </script>
+        <script src="config.js"></script>
+        <script src="vendor/dojo/dojo/dojo.js"></script>
+        <script src="run.js"></script>
     </body>
 </html>
