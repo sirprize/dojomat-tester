@@ -1,5 +1,7 @@
 define([
     "dojo/_base/declare",
+    "dojo/hash",
+    "dojo/topic",
     "dojo/on",
     "dojo/query",
     "dojo/dom-attr",
@@ -10,7 +12,7 @@ define([
     "dojomat/_StateAware",
     "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js",
     "dojo/text!./template/MyOtherPage.html"
-    ], function (declare, on, query, domAttr, lang, _WidgetBase, _TemplatedMixin, _AppAware, _StateAware, L, template) {
+    ], function (declare, hash, topic, on, query, domAttr, lang, _WidgetBase, _TemplatedMixin, _AppAware, _StateAware, L, template) {
 
     return declare([_WidgetBase, _TemplatedMixin, _AppAware, _StateAware], {
         request: null,
@@ -26,6 +28,11 @@ define([
 
         postCreate: function () {
             this.setTitle('MyOtherPage');
+
+            this.own(topic.subscribe("/dojo/hashchange", function(newHash){
+                // Handle the hash change publish
+                console.debug('hashchange ' + newHash);
+            }));
 
             // find "in-app" links
             query('a.push', this.domNode).forEach(lang.hitch(this, function (node) {
