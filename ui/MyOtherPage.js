@@ -8,14 +8,15 @@ define([
     "dijit/_TemplatedMixin",
     "dojomat/_AppAware",
     "dojomat/_StateAware",
-    "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"
-    ], function (declare, on, query, domAttr, lang, _WidgetBase, _TemplatedMixin, _AppAware, _StateAware, L) {
+    "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js",
+    "dojo/text!./template/MyOtherPage.html"
+    ], function (declare, on, query, domAttr, lang, _WidgetBase, _TemplatedMixin, _AppAware, _StateAware, L, template) {
 
     return declare([_WidgetBase, _TemplatedMixin, _AppAware, _StateAware], {
         request: null,
         router: null,
         session: null,
-        templateString: '<div><h1>MyOtherPage</h1><a href="#" data-dojomat-route="home" class="push">Go to MyHomePage</a></div>',
+        templateString: template,
 
         constructor: function (params) {
             this.request = params.request;
