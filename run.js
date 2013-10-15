@@ -4,6 +4,6 @@ require(['dojo/has'], function (has) {
     });
 
     require(['tester/App'], function (App) {
-        new App({ refNode: document.getElementById("page_container") });
+        new App({}, "page_container");
     });
 });
