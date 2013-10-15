@@ -18,7 +18,7 @@ define([
             
             stateAwareWidget.own(on(node, 'click', function (ev) {
                 ev.preventDefault();
-                stateAwareWidget.push(url);
+                stateAwareWidget.pushState(url);
             }));
         }
     });
